@@ -11,7 +11,7 @@ class Program
 "Altitude Attack",
 "Animal Arithmetic",
 "Barn Brawl",
-"Battery Batters",
+"Batty Batters",
 "Billiard Battle",
 "Bouncing Balls",
 "Bounding Blocks",
@@ -39,21 +39,21 @@ class Program
 "Pack And Pile",
 "Pummel Punch",
 "Risky Rubberbands",
-"Rockin Rithm",
+"Rockin Rhythm",
 "Rolly Ragdolls",
 "Rotor Race",
 "Rusty Racers",
 "Sandy Search",
 "Searing Spotlights",
 "Selfish Stride",
-"Sharky Swim",
+"SharkySwim",
 "Sidestep Slope",
 "Slippery Sprint",
 "Snowy Spin",
 "Sorcerers Sprint",
 "Speedy Sabers",
 "Spooky Spikes",
-"Stategic Shockwave",
+"Srtategic Shockwave",
 "Swift Shooters",
 "Temporal Trails",
 "Thunderous Trench",
@@ -97,5 +97,6 @@ class Program
                 Console.WriteLine($"Cannot find key: {keyPath}");
             }
         }
+        Console.ReadLine();
     }
 }
