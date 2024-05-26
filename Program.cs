@@ -3,6 +3,7 @@ using System;
 
 class Program
 {
+    
     static void Main()
     {
         List<string> AchWon = [
@@ -62,6 +63,12 @@ class Program
             "Word Wars"
         ];
         List<string> AchLost = [.. AchWon];
+        do Calc(AchWon, AchLost);
+        while (Console.ReadKey().Key == ConsoleKey.Enter);
+    }
+
+    static void Calc(List<string> AchWon, List<string> AchLost)
+    {
         string keyPath = @"SOFTWARE\Rebuilt Games\Pummel Party";
         using (RegistryKey key = Registry.CurrentUser.OpenSubKey(keyPath))
         {
@@ -71,7 +78,7 @@ class Program
                 {
                     if (valueName.IndexOf("_ACH_WON_") != -1)
                         AchWon.Remove(valueName.Split('_')[0]);
-                    else if(valueName.IndexOf("_ACH_LOST_") != -1)
+                    else if (valueName.IndexOf("_ACH_LOST_") != -1)
                         AchLost.Remove(valueName.Split('_')[0]);
                 }
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -81,20 +88,21 @@ class Program
                 {
                     Console.WriteLine("\t" + item);
                 }
-                Console.ForegroundColor= ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine();
                 Console.WriteLine("Missing Ach lost: ");
                 Console.ForegroundColor = ConsoleColor.Red;
                 foreach (var item in AchLost)
                 {
-                    Console.WriteLine("\t"+item);
+                    Console.WriteLine("\t" + item);
                 }
             }
             else
             {
                 Console.WriteLine($"Cannot find key: {keyPath}");
             }
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Enter to update");
         }
-        Console.ReadLine();
     }
 }
